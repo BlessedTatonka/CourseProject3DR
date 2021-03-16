@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		176F63BE1EB73FE000E86937 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176F63BD1EB73FE000E86937 /* CameraController.swift */; };
+		17769AF51EB69B86004C3F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17769AF41EB69B86004C3F13 /* Assets.xcassets */; };
+		17769AF81EB69B86004C3F13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17769AF61EB69B86004C3F13 /* LaunchScreen.storyboard */; };
+		17769B021EB69C15004C3F13 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17769B011EB69C15004C3F13 /* ImageController.swift */; };
+		17769B051EB69C87004C3F13 /* lena.png in Resources */ = {isa = PBXBuildFile; fileRef = 17769B031EB69C87004C3F13 /* lena.png */; };
+		17769B061EB69C87004C3F13 /* mandrill.png in Resources */ = {isa = PBXBuildFile; fileRef = 17769B041EB69C87004C3F13 /* mandrill.png */; };
+		17769B0A1EB69CA8004C3F13 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 17769B091EB69CA8004C3F13 /* OpenCVWrapper.mm */; };
+		891DF8B425F8D25F002740C2 /* birds_magenta.png in Resources */ = {isa = PBXBuildFile; fileRef = 891DF8B025F8D25F002740C2 /* birds_magenta.png */; };
+		891DF8BC25F8D39A002740C2 /* birds.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 891DF8BB25F8D39A002740C2 /* birds.bmp */; };
+		891DF8C025F8D4C0002740C2 /* birds_mask.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 891DF8BE25F8D4C0002740C2 /* birds_mask.jpg */; };
+		891DF8C125F8D4C0002740C2 /* birds.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 891DF8BF25F8D4C0002740C2 /* birds.jpg */; };
+		891DF8C825F8E3F4002740C2 /* birds_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 891DF8C725F8E3F4002740C2 /* birds_mask.png */; };
+		891DF8CB25F8E4AE002740C2 /* birds_mask.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 891DF8CA25F8E4AE002740C2 /* birds_mask.bmp */; };
+		891DF8CF25F9492A002740C2 /* statue.png in Resources */ = {isa = PBXBuildFile; fileRef = 891DF8CE25F94927002740C2 /* statue.png */; };
+		891DF8D325F94AC8002740C2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891DF8D225F94AC8002740C2 /* ImagePicker.swift */; };
+		891DF8E525F95823002740C2 /* InpaintingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9CB9525F18E54000D6204 /* InpaintingViewController.swift */; };
+		891DF8E725F9583E002740C2 /* OpenCV-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 17769B0E1EB6A29E004C3F13 /* OpenCV-Bridging-Header.h */; };
+		891DF8E925F9584B002740C2 /* OpenCV-Bridging-Header.h in Resources */ = {isa = PBXBuildFile; fileRef = 17769B0E1EB6A29E004C3F13 /* OpenCV-Bridging-Header.h */; };
+		8930403125FE4626002B9B8E /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930403025FE4626002B9B8E /* ARViewController.swift */; };
+		8930403425FE46AC002B9B8E /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930403325FE46AC002B9B8E /* StatusViewController.swift */; };
+		8930403925FE4B1C002B9B8E /* ARViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930403825FE4B1C002B9B8E /* ARViewController+ARSessionDelegate.swift */; };
+		8930404025FE4EE6002B9B8E /* Model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8930403F25FE4EE5002B9B8E /* Model.mlmodel */; };
+		8930404525FE4EE8002B9B8E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930404125FE4EE7002B9B8E /* CameraViewController.swift */; };
+		8930404625FE4EE8002B9B8E /* UIBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930404225FE4EE7002B9B8E /* UIBoundingBox.swift */; };
+		8930404725FE4EE8002B9B8E /* SSDPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930404325FE4EE8002B9B8E /* SSDPredictor.swift */; };
+		8930404825FE4EE8002B9B8E /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930404425FE4EE8002B9B8E /* CaptureManager.swift */; };
+		898E151625E8462100A53AFC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 898E151525E8462100A53AFC /* opencv2.framework */; };
+		898E152425E84D4100A53AFC /* PixMix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 898E152025E84D4000A53AFC /* PixMix.cpp */; };
+		898E152525E84D4100A53AFC /* OneLvPixMix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 898E152225E84D4100A53AFC /* OneLvPixMix.cpp */; };
+		898E152625E84D4100A53AFC /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 898E152325E84D4100A53AFC /* Utilities.cpp */; };
+		89B128D725EDAFB400981AEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17769AED1EB69B86004C3F13 /* AppDelegate.swift */; };
+		89B128FA25EDB7B900981AEF /* Main.cpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89B128CA25EDABF400981AEF /* Main.cpp */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290025EE5AD500981AEF /* ImageController.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17769B011EB69C15004C3F13 /* ImageController.swift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290125EE5AD500981AEF /* CameraController.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 176F63BD1EB73FE000E86937 /* CameraController.swift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290225EE5AD500981AEF /* OpenCVWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17769B081EB69CA8004C3F13 /* OpenCVWrapper.h */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290325EE5AD500981AEF /* OpenCVWrapper.mm in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17769B091EB69CA8004C3F13 /* OpenCVWrapper.mm */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290425EE5AD500981AEF /* OneLvPixMix.cpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 898E152225E84D4100A53AFC /* OneLvPixMix.cpp */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290525EE5AD500981AEF /* OneLvPixMix.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 898E152125E84D4100A53AFC /* OneLvPixMix.h */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290625EE5AD500981AEF /* PixMix.cpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 898E152025E84D4000A53AFC /* PixMix.cpp */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290725EE5AD500981AEF /* PixMix.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 898E151F25E84D4000A53AFC /* PixMix.h */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290825EE5AD500981AEF /* Utilities.cpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 898E152325E84D4100A53AFC /* Utilities.cpp */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89B1290925EE5AD500981AEF /* Utilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 898E151E25E84D4000A53AFC /* Utilities.h */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		89F9CB7925F18B20000D6204 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F9CB7825F18B20000D6204 /* opencv2.framework */; };
+		89F9CB8525F18C37000D6204 /* Metal in Resources */ = {isa = PBXBuildFile; fileRef = 89F9CB8425F18C36000D6204 /* Metal */; };
+		89F9CBA025F18EA1000D6204 /* GraySegmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9CB9E25F18EA1000D6204 /* GraySegmentFilter.swift */; };
+		89F9CBA125F18EA1000D6204 /* UIImage+Segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9CB9F25F18EA1000D6204 /* UIImage+Segmentation.swift */; };
+		89F9CBA325F18EB1000D6204 /* Deeplab.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 89F9CB9C25F18EA1000D6204 /* Deeplab.mlmodel */; };
+		89F9CBAB25F1926C000D6204 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9CBAA25F1926C000D6204 /* SceneDelegate.swift */; };
+		89F9CBB025F192AF000D6204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89F9CBAF25F192AF000D6204 /* Main.storyboard */; };
+		89F9CBB225F192D2000D6204 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89F9CB9D25F18EA1000D6204 /* test.jpg */; };
+		89F9CBB525F1931B000D6204 /* test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F9CBB425F19316000D6204 /* test2.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		89B128F625EDB77200981AEF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				89B1290025EE5AD500981AEF /* ImageController.swift in CopyFiles */,
+				89B1290125EE5AD500981AEF /* CameraController.swift in CopyFiles */,
+				89B1290225EE5AD500981AEF /* OpenCVWrapper.h in CopyFiles */,
+				89B1290325EE5AD500981AEF /* OpenCVWrapper.mm in CopyFiles */,
+				89B1290425EE5AD500981AEF /* OneLvPixMix.cpp in CopyFiles */,
+				89B1290525EE5AD500981AEF /* OneLvPixMix.h in CopyFiles */,
+				89B1290625EE5AD500981AEF /* PixMix.cpp in CopyFiles */,
+				89B1290725EE5AD500981AEF /* PixMix.h in CopyFiles */,
+				89B1290825EE5AD500981AEF /* Utilities.cpp in CopyFiles */,
+				89B1290925EE5AD500981AEF /* Utilities.h in CopyFiles */,
+				89B128FA25EDB7B900981AEF /* Main.cpp in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		176F63BD1EB73FE000E86937 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		17769AEA1EB69B86004C3F13 /* OpenCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17769AED1EB69B86004C3F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		17769AF41EB69B86004C3F13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17769AF71EB69B86004C3F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17769AF91EB69B86004C3F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17769B011EB69C15004C3F13 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		17769B031EB69C87004C3F13 /* lena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lena.png; sourceTree = "<group>"; };
+		17769B041EB69C87004C3F13 /* mandrill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mandrill.png; sourceTree = "<group>"; };
+		17769B081EB69CA8004C3F13 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		17769B091EB69CA8004C3F13 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		17769B0E1EB6A29E004C3F13 /* OpenCV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenCV-Bridging-Header.h"; sourceTree = "<group>"; };
+		891DF8B025F8D25F002740C2 /* birds_magenta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birds_magenta.png; sourceTree = "<group>"; };
+		891DF8BB25F8D39A002740C2 /* birds.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = birds.bmp; sourceTree = "<group>"; };
+		891DF8BE25F8D4C0002740C2 /* birds_mask.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = birds_mask.jpg; sourceTree = "<group>"; };
+		891DF8BF25F8D4C0002740C2 /* birds.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = birds.jpg; sourceTree = "<group>"; };
+		891DF8C725F8E3F4002740C2 /* birds_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = birds_mask.png; path = OpenCV/Data/birds_mask.png; sourceTree = SOURCE_ROOT; };
+		891DF8CA25F8E4AE002740C2 /* birds_mask.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = birds_mask.bmp; sourceTree = "<group>"; };
+		891DF8CE25F94927002740C2 /* statue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statue.png; sourceTree = "<group>"; };
+		891DF8D225F94AC8002740C2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		8930403025FE4626002B9B8E /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		8930403325FE46AC002B9B8E /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		8930403825FE4B1C002B9B8E /* ARViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
+		8930403F25FE4EE5002B9B8E /* Model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Model.mlmodel; sourceTree = "<group>"; };
+		8930404125FE4EE7002B9B8E /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		8930404225FE4EE7002B9B8E /* UIBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBoundingBox.swift; sourceTree = "<group>"; };
+		8930404325FE4EE8002B9B8E /* SSDPredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDPredictor.swift; sourceTree = "<group>"; };
+		8930404425FE4EE8002B9B8E /* CaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureManager.swift; sourceTree = "<group>"; };
+		893DC91725FB01FA000B4639 /* FastDigitalImageInpainting.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FastDigitalImageInpainting.hpp; sourceTree = "<group>"; };
+		898E151525E8462100A53AFC /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		898E151E25E84D4000A53AFC /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		898E151F25E84D4000A53AFC /* PixMix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixMix.h; sourceTree = "<group>"; };
+		898E152025E84D4000A53AFC /* PixMix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PixMix.cpp; sourceTree = "<group>"; };
+		898E152125E84D4100A53AFC /* OneLvPixMix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneLvPixMix.h; sourceTree = "<group>"; };
+		898E152225E84D4100A53AFC /* OneLvPixMix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OneLvPixMix.cpp; sourceTree = "<group>"; };
+		898E152325E84D4100A53AFC /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
+		898E153B25E856BF00A53AFC /* birds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = birds.png; path = OpenCV/Data/birds.png; sourceTree = SOURCE_ROOT; };
+		89B128CA25EDABF400981AEF /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
+		89F9CB7825F18B20000D6204 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		89F9CB8425F18C36000D6204 /* Metal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Metal; sourceTree = "<group>"; };
+		89F9CB9525F18E54000D6204 /* InpaintingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InpaintingViewController.swift; sourceTree = "<group>"; };
+		89F9CB9C25F18EA1000D6204 /* Deeplab.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Deeplab.mlmodel; sourceTree = "<group>"; };
+		89F9CB9D25F18EA1000D6204 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		89F9CB9E25F18EA1000D6204 /* GraySegmentFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraySegmentFilter.swift; sourceTree = "<group>"; };
+		89F9CB9F25F18EA1000D6204 /* UIImage+Segmentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Segmentation.swift"; sourceTree = "<group>"; };
+		89F9CBAA25F1926C000D6204 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		89F9CBAF25F192AF000D6204 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		89F9CBB425F19316000D6204 /* test2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test2.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17769AE71EB69B86004C3F13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89F9CB7925F18B20000D6204 /* opencv2.framework in Frameworks */,
+				898E151625E8462100A53AFC /* opencv2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17769AE11EB69B86004C3F13 = {
+			isa = PBXGroup;
+			children = (
+				17769AEC1EB69B86004C3F13 /* OpenCV */,
+				17769AEB1EB69B86004C3F13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17769AEB1EB69B86004C3F13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17769AEA1EB69B86004C3F13 /* OpenCV.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17769AEC1EB69B86004C3F13 /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				17769AED1EB69B86004C3F13 /* AppDelegate.swift */,
+				89F9CBAA25F1926C000D6204 /* SceneDelegate.swift */,
+				17769AF41EB69B86004C3F13 /* Assets.xcassets */,
+				89F9CBAF25F192AF000D6204 /* Main.storyboard */,
+				17769AF61EB69B86004C3F13 /* LaunchScreen.storyboard */,
+				17769AF91EB69B86004C3F13 /* Info.plist */,
+				17769B0E1EB6A29E004C3F13 /* OpenCV-Bridging-Header.h */,
+				8930403D25FE4E9A002B9B8E /* YOLO */,
+				8930403725FE4916002B9B8E /* ARView */,
+				891DF8DA25F95539002740C2 /* Deeplab */,
+				891DF8D925F95501002740C2 /* Data */,
+				17769B0B1EB69EDD004C3F13 /* Frameworks */,
+				89F9CB8425F18C36000D6204 /* Metal */,
+				17769AFF1EB69BFB004C3F13 /* Inpainting */,
+			);
+			path = OpenCV;
+			sourceTree = "<group>";
+		};
+		17769AFF1EB69BFB004C3F13 /* Inpainting */ = {
+			isa = PBXGroup;
+			children = (
+				89F9CB9525F18E54000D6204 /* InpaintingViewController.swift */,
+				893DC91725FB01FA000B4639 /* FastDigitalImageInpainting.hpp */,
+				89B128CA25EDABF400981AEF /* Main.cpp */,
+				17769B011EB69C15004C3F13 /* ImageController.swift */,
+				176F63BD1EB73FE000E86937 /* CameraController.swift */,
+				17769B081EB69CA8004C3F13 /* OpenCVWrapper.h */,
+				17769B091EB69CA8004C3F13 /* OpenCVWrapper.mm */,
+				898E152225E84D4100A53AFC /* OneLvPixMix.cpp */,
+				898E152125E84D4100A53AFC /* OneLvPixMix.h */,
+				898E152025E84D4000A53AFC /* PixMix.cpp */,
+				898E151F25E84D4000A53AFC /* PixMix.h */,
+				898E152325E84D4100A53AFC /* Utilities.cpp */,
+				898E151E25E84D4000A53AFC /* Utilities.h */,
+			);
+			path = Inpainting;
+			sourceTree = "<group>";
+		};
+		17769B0B1EB69EDD004C3F13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89F9CB7825F18B20000D6204 /* opencv2.framework */,
+				898E151525E8462100A53AFC /* opencv2.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		891DF8D925F95501002740C2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				891DF8BE25F8D4C0002740C2 /* birds_mask.jpg */,
+				891DF8BF25F8D4C0002740C2 /* birds.jpg */,
+				891DF8B025F8D25F002740C2 /* birds_magenta.png */,
+				89F9CB9D25F18EA1000D6204 /* test.jpg */,
+				89F9CBB425F19316000D6204 /* test2.png */,
+				891DF8CE25F94927002740C2 /* statue.png */,
+				891DF8CA25F8E4AE002740C2 /* birds_mask.bmp */,
+				891DF8C725F8E3F4002740C2 /* birds_mask.png */,
+				891DF8BB25F8D39A002740C2 /* birds.bmp */,
+				898E153B25E856BF00A53AFC /* birds.png */,
+				17769B031EB69C87004C3F13 /* lena.png */,
+				17769B041EB69C87004C3F13 /* mandrill.png */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		891DF8DA25F95539002740C2 /* Deeplab */ = {
+			isa = PBXGroup;
+			children = (
+				89F9CB9E25F18EA1000D6204 /* GraySegmentFilter.swift */,
+				89F9CB9F25F18EA1000D6204 /* UIImage+Segmentation.swift */,
+				891DF8D225F94AC8002740C2 /* ImagePicker.swift */,
+				89F9CB9C25F18EA1000D6204 /* Deeplab.mlmodel */,
+			);
+			path = Deeplab;
+			sourceTree = "<group>";
+		};
+		8930403725FE4916002B9B8E /* ARView */ = {
+			isa = PBXGroup;
+			children = (
+				8930403025FE4626002B9B8E /* ARViewController.swift */,
+				8930403325FE46AC002B9B8E /* StatusViewController.swift */,
+				8930403825FE4B1C002B9B8E /* ARViewController+ARSessionDelegate.swift */,
+			);
+			path = ARView;
+			sourceTree = "<group>";
+		};
+		8930403D25FE4E9A002B9B8E /* YOLO */ = {
+			isa = PBXGroup;
+			children = (
+				8930404125FE4EE7002B9B8E /* CameraViewController.swift */,
+				8930404425FE4EE8002B9B8E /* CaptureManager.swift */,
+				8930404325FE4EE8002B9B8E /* SSDPredictor.swift */,
+				8930404225FE4EE7002B9B8E /* UIBoundingBox.swift */,
+				8930403F25FE4EE5002B9B8E /* Model.mlmodel */,
+			);
+			path = YOLO;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17769AE91EB69B86004C3F13 /* OpenCV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17769AFC1EB69B86004C3F13 /* Build configuration list for PBXNativeTarget "OpenCV" */;
+			buildPhases = (
+				17769AE61EB69B86004C3F13 /* Sources */,
+				17769AE71EB69B86004C3F13 /* Frameworks */,
+				17769AE81EB69B86004C3F13 /* Resources */,
+				89B128F625EDB77200981AEF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenCV;
+			productName = OpenCV;
+			productReference = 17769AEA1EB69B86004C3F13 /* OpenCV.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17769AE21EB69B86004C3F13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 1230;
+				ORGANIZATIONNAME = "Pharos Production Inc.";
+				TargetAttributes = {
+					17769AE91EB69B86004C3F13 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 4SKPKTA3YW;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 17769AE51EB69B86004C3F13 /* Build configuration list for PBXProject "OpenCV" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17769AE11EB69B86004C3F13;
+			productRefGroup = 17769AEB1EB69B86004C3F13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17769AE91EB69B86004C3F13 /* OpenCV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17769AE81EB69B86004C3F13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891DF8E925F9584B002740C2 /* OpenCV-Bridging-Header.h in Resources */,
+				17769AF81EB69B86004C3F13 /* LaunchScreen.storyboard in Resources */,
+				891DF8B425F8D25F002740C2 /* birds_magenta.png in Resources */,
+				89F9CBB525F1931B000D6204 /* test2.png in Resources */,
+				89F9CB8525F18C37000D6204 /* Metal in Resources */,
+				89F9CBB025F192AF000D6204 /* Main.storyboard in Resources */,
+				89F9CBB225F192D2000D6204 /* test.jpg in Resources */,
+				17769AF51EB69B86004C3F13 /* Assets.xcassets in Resources */,
+				891DF8C125F8D4C0002740C2 /* birds.jpg in Resources */,
+				891DF8C825F8E3F4002740C2 /* birds_mask.png in Resources */,
+				891DF8CF25F9492A002740C2 /* statue.png in Resources */,
+				17769B061EB69C87004C3F13 /* mandrill.png in Resources */,
+				891DF8CB25F8E4AE002740C2 /* birds_mask.bmp in Resources */,
+				891DF8C025F8D4C0002740C2 /* birds_mask.jpg in Resources */,
+				891DF8BC25F8D39A002740C2 /* birds.bmp in Resources */,
+				17769B051EB69C87004C3F13 /* lena.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17769AE61EB69B86004C3F13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8930404025FE4EE6002B9B8E /* Model.mlmodel in Sources */,
+				8930404525FE4EE8002B9B8E /* CameraViewController.swift in Sources */,
+				891DF8E725F9583E002740C2 /* OpenCV-Bridging-Header.h in Sources */,
+				89F9CBA325F18EB1000D6204 /* Deeplab.mlmodel in Sources */,
+				8930404725FE4EE8002B9B8E /* SSDPredictor.swift in Sources */,
+				8930403125FE4626002B9B8E /* ARViewController.swift in Sources */,
+				89B128D725EDAFB400981AEF /* AppDelegate.swift in Sources */,
+				8930404825FE4EE8002B9B8E /* CaptureManager.swift in Sources */,
+				89F9CBA025F18EA1000D6204 /* GraySegmentFilter.swift in Sources */,
+				89F9CBA125F18EA1000D6204 /* UIImage+Segmentation.swift in Sources */,
+				17769B021EB69C15004C3F13 /* ImageController.swift in Sources */,
+				898E152425E84D4100A53AFC /* PixMix.cpp in Sources */,
+				8930403925FE4B1C002B9B8E /* ARViewController+ARSessionDelegate.swift in Sources */,
+				8930403425FE46AC002B9B8E /* StatusViewController.swift in Sources */,
+				898E152525E84D4100A53AFC /* OneLvPixMix.cpp in Sources */,
+				891DF8E525F95823002740C2 /* InpaintingViewController.swift in Sources */,
+				176F63BE1EB73FE000E86937 /* CameraController.swift in Sources */,
+				17769B0A1EB69CA8004C3F13 /* OpenCVWrapper.mm in Sources */,
+				8930404625FE4EE8002B9B8E /* UIBoundingBox.swift in Sources */,
+				898E152625E84D4100A53AFC /* Utilities.cpp in Sources */,
+				891DF8D325F94AC8002740C2 /* ImagePicker.swift in Sources */,
+				89F9CBAB25F1926C000D6204 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		17769AF61EB69B86004C3F13 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17769AF71EB69B86004C3F13 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17769AFA1EB69B86004C3F13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		17769AFB1EB69B86004C3F13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17769AFD1EB69B86004C3F13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4SKPKTA3YW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenCV/Frameworks",
+				);
+				INFOPLIST_FILE = OpenCV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.malashenko;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./OpenCV/OpenCV-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		17769AFE1EB69B86004C3F13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4SKPKTA3YW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenCV/Frameworks",
+				);
+				INFOPLIST_FILE = OpenCV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.malashenko;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./OpenCV/OpenCV-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17769AE51EB69B86004C3F13 /* Build configuration list for PBXProject "OpenCV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17769AFA1EB69B86004C3F13 /* Debug */,
+				17769AFB1EB69B86004C3F13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17769AFC1EB69B86004C3F13 /* Build configuration list for PBXNativeTarget "OpenCV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17769AFD1EB69B86004C3F13 /* Debug */,
+				17769AFE1EB69B86004C3F13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17769AE21EB69B86004C3F13 /* Project object */;
+}
