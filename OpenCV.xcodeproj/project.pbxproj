@@ -25,6 +25,7 @@
 		891DF8E525F95823002740C2 /* InpaintingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9CB9525F18E54000D6204 /* InpaintingViewController.swift */; };
 		891DF8E725F9583E002740C2 /* OpenCV-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 17769B0E1EB6A29E004C3F13 /* OpenCV-Bridging-Header.h */; };
 		891DF8E925F9584B002740C2 /* OpenCV-Bridging-Header.h in Resources */ = {isa = PBXBuildFile; fileRef = 17769B0E1EB6A29E004C3F13 /* OpenCV-Bridging-Header.h */; };
+		8929B7A72607A6C10076B41E /* Metal in Resources */ = {isa = PBXBuildFile; fileRef = 8929B7A62607A6C10076B41E /* Metal */; };
 		8930403125FE4626002B9B8E /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930403025FE4626002B9B8E /* ARViewController.swift */; };
 		8930403425FE46AC002B9B8E /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930403325FE46AC002B9B8E /* StatusViewController.swift */; };
 		8930403925FE4B1C002B9B8E /* ARViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930403825FE4B1C002B9B8E /* ARViewController+ARSessionDelegate.swift */; };
@@ -50,7 +51,6 @@
 		89B1290825EE5AD500981AEF /* Utilities.cpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 898E152325E84D4100A53AFC /* Utilities.cpp */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		89B1290925EE5AD500981AEF /* Utilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 898E151E25E84D4000A53AFC /* Utilities.h */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		89F9CB7925F18B20000D6204 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F9CB7825F18B20000D6204 /* opencv2.framework */; };
-		89F9CB8525F18C37000D6204 /* Metal in Resources */ = {isa = PBXBuildFile; fileRef = 89F9CB8425F18C36000D6204 /* Metal */; };
 		89F9CBA025F18EA1000D6204 /* GraySegmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9CB9E25F18EA1000D6204 /* GraySegmentFilter.swift */; };
 		89F9CBA125F18EA1000D6204 /* UIImage+Segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9CB9F25F18EA1000D6204 /* UIImage+Segmentation.swift */; };
 		89F9CBA325F18EB1000D6204 /* Deeplab.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 89F9CB9C25F18EA1000D6204 /* Deeplab.mlmodel */; };
@@ -104,6 +104,7 @@
 		891DF8CA25F8E4AE002740C2 /* birds_mask.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = birds_mask.bmp; sourceTree = "<group>"; };
 		891DF8CE25F94927002740C2 /* statue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statue.png; sourceTree = "<group>"; };
 		891DF8D225F94AC8002740C2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		8929B7A62607A6C10076B41E /* Metal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Metal; sourceTree = "<group>"; };
 		8930403025FE4626002B9B8E /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		8930403325FE46AC002B9B8E /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		8930403825FE4B1C002B9B8E /* ARViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		898E153B25E856BF00A53AFC /* birds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = birds.png; path = OpenCV/Data/birds.png; sourceTree = SOURCE_ROOT; };
 		89B128CA25EDABF400981AEF /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		89F9CB7825F18B20000D6204 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
-		89F9CB8425F18C36000D6204 /* Metal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Metal; sourceTree = "<group>"; };
 		89F9CB9525F18E54000D6204 /* InpaintingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InpaintingViewController.swift; sourceTree = "<group>"; };
 		89F9CB9C25F18EA1000D6204 /* Deeplab.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Deeplab.mlmodel; sourceTree = "<group>"; };
 		89F9CB9D25F18EA1000D6204 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 				891DF8DA25F95539002740C2 /* Deeplab */,
 				891DF8D925F95501002740C2 /* Data */,
 				17769B0B1EB69EDD004C3F13 /* Frameworks */,
-				89F9CB8425F18C36000D6204 /* Metal */,
+				8929B7A62607A6C10076B41E /* Metal */,
 				17769AFF1EB69BFB004C3F13 /* Inpainting */,
 			);
 			path = OpenCV;
@@ -331,11 +331,11 @@
 				17769AF81EB69B86004C3F13 /* LaunchScreen.storyboard in Resources */,
 				891DF8B425F8D25F002740C2 /* birds_magenta.png in Resources */,
 				89F9CBB525F1931B000D6204 /* test2.png in Resources */,
-				89F9CB8525F18C37000D6204 /* Metal in Resources */,
 				89F9CBB025F192AF000D6204 /* Main.storyboard in Resources */,
 				89F9CBB225F192D2000D6204 /* test.jpg in Resources */,
 				17769AF51EB69B86004C3F13 /* Assets.xcassets in Resources */,
 				891DF8C125F8D4C0002740C2 /* birds.jpg in Resources */,
+				8929B7A72607A6C10076B41E /* Metal in Resources */,
 				891DF8C825F8E3F4002740C2 /* birds_mask.png in Resources */,
 				891DF8CF25F9492A002740C2 /* statue.png in Resources */,
 				17769B061EB69C87004C3F13 /* mandrill.png in Resources */,

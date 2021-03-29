@@ -106,9 +106,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             
             node.addChildNode(planeNode)
             
-//            let imageFromArkitScene = self.sceneView.snapshot()
+            let imageFromArkitScene = self.sceneView.snapshot()
 //            
-//            planeNode.geometry?.firstMaterial?.diffuse.contents = InpaintingViewController.inpaintWhiteMask(src: imageFromArkitScene)
+            planeNode.geometry?.firstMaterial?.diffuse.contents = InpaintingViewController.inpaintWhiteMask(src: imageFromArkitScene)
         }
 
         DispatchQueue.main.async {

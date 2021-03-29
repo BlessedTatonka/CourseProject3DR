@@ -65,11 +65,15 @@ using namespace cv;
 }
 
 + (Mat)_grayFrom:(UIImage *)source andMask:(UIImage *)imgMask  {
+    
+    source = source.fixOrientation;
+    imgMask = imgMask.fixOrientation;
+    
     cv::Mat src;
     UIImageToMat(source, src, true);
     cv::Mat mask;
     UIImageToMat(imgMask, mask, true);
-    
+        
     cv::Mat_<cv::Vec3b> imageMat = foo(src, mask);
         
     return imageMat;

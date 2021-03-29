@@ -5,19 +5,48 @@
 #include "FastDigitalImageInpainting.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #import <opencv2/imgcodecs/ios.h>
+#import "cmath"
 
-const float alpha = 0.15;
+float alpha = 0.2;
 
 cv::Mat_<cv::Vec3b> foo(cv::Mat src, cv::Mat mask) {
+    
     cv::Mat_<cv::Vec3b> dst(src.size());
+    
+    alpha = 450.0 / src.cols;
     
     cv::resize(src, src, cv::Size(src.cols * alpha, src.rows * alpha), 0, 0, CV_INTER_LINEAR);
     cv::resize(mask, mask, cv::Size(mask.cols * alpha, mask.rows * alpha), 0, 0, CV_INTER_LINEAR);
     
     cv::cvtColor(src, src, cv::COLOR_BGR2RGB);
+    
     cv::cvtColor(mask, mask, cv::COLOR_BGR2GRAY);
     
     mask = ~mask;
+    
+    cv::Mat newMask = mask.clone();
+    
+    float k = 10.0;
+    
+    for(int i=0; i < mask.rows; i++) {
+        for(int j=0; j < mask.cols; j++) {
+//            std::cout << int(mask.at<uchar>(i,j)) << std::endl;
+            if (int(mask.at<uchar>(i,j)) != 255) {
+                for (int a = -k; a < k; ++a) {
+                    for (int b = - k; b <= k; ++b) {
+                        if (i + a >= 0 && i + a < mask.rows
+                            && j + b >= 0 && j + b < mask.cols
+                            && (pow(sin(a / k), 2) + pow(cos(b / k), 2)) <= 1) {
+                            newMask.at<uchar>(i + a, j + b) = 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    mask = newMask;
+    
+    std::cout << src.size() << " " << mask.size() << "\n";
     
     PixMix pm;
     pm.init(src, mask);
@@ -46,33 +75,59 @@ cv::Mat_<cv::Vec3b> pixMixMagenta(cv::Mat src) {
 }
 
 cv::Mat_<cv::Vec3b> pixMixWhite(cv::Mat src) {
+    std::cout << "pixMixWhite" << "\n";
     cv::Mat_<cv::Vec3b> dst(src.size());
+    
+    alpha = 300.0 / src.cols;
+    
     cv::resize(src, src, cv::Size(src.cols * alpha, src.rows * alpha), 0, 0, CV_INTER_LINEAR);
     
-//    cv::Mat_<uchar> mask(src.size());
-//
-////    for (int y = 0; y < mask.rows; ++y) {
-////        for (int x = 0; x < mask.cols; ++x) {
-////            cv::Vec4b & pixel = mask.at<cv::Vec4b>(y, x);
-////            if (!(pixel[0] == 255 && pixel[1] == 255 && pixel[2] == 255)) {
-////                pixel[0] = 0;
-////                pixel[1] = 0;
-////                pixel[2] = 0;
-////            }
-////        }
-////    }
-//
-//    cv::cvtColor(mask, mask, cv::COLOR_BGR2GRAY);
+    cv::Mat mask = src.clone();
     
-    cv::Mat_<uchar> mask;
+    cv::cvtColor(src, src, cv::COLOR_BGR2RGB);
+    cv::cvtColor(mask, mask, cv::COLOR_BGR2GRAY);
     
-    Util::createMask(src, cv::Scalar(255, 255, 255), mask);
+//    mask = ~mask;
     
-    mask = ~mask;
+    cv::Mat newMask = mask.clone();
+
+    float k = 10.0;
+
+    for(int i=0; i < mask.rows; i++) {
+        std::cout << i << "\n";
+        for(int j=0; j < mask.cols; j++) {
+            std::cout << int(mask.at<uchar>(i,j)) << std::endl;
+            if (int(mask.at<uchar>(i,j)) == 255) {
+                newMask.at<uchar>(i,j) = 0;
+            } else {
+                newMask.at<uchar>(i,j) = 255;
+            
+//                for (int a = -k; a < k; ++a) {
+//                    for (int b = - k; b <= k; ++b) {
+//                        if (i + a >= 0 && i + a < mask.rows
+//                            && j + b >= 0 && j + b < mask.cols
+//                            && (pow(sin(a / k), 2) + pow(cos(b / k), 2)) <= 1) {
+//                            newMask.at<uchar>(i + a, j + b) = 0;
+//                        }
+//                    }
+//                }
+            }
+        }
+    }
+    mask = newMask;
+    
+    std::cout << src.size() << " " << mask.size() << "\n";
     
     PixMix pm;
     pm.init(src, mask);
     pm.execute(dst, 0.05f);
+    
+    //TODO
+    
+//    cv::Mat mask_2 = cv::cvtColor(mask, mask, cv::COLOR_GRAY2BGR);
+//    cv::Mat mask_out = cv::subtract(mask_2, dst);
+//    mask_out=cv::subtract(src1_mask, mask);
+//    dst = mask_out;
     
     cv::cvtColor(dst, dst, cv::COLOR_BGR2RGB);
     

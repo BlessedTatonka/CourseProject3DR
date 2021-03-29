@@ -2,8 +2,8 @@
 //  MTFilterManager.swift
 //  MetalFilters
 //
-//  Created by Борис Малашенко on 10.03.2021.
-//  Copyright © 2021 Pharos Production Inc. All rights reserved.
+//  Created by xushuifeng on 2018/6/10.
+//  Copyright © 2018 shuifeng.me. All rights reserved.
 //
 
 import Foundation

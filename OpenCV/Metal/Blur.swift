@@ -2,8 +2,7 @@
 //  MT1977Filter.swift
 //  MetalFilters
 //
-//  Created by Борис Малашенко on 10.03.2021.
-//  Copyright © 2021 Pharos Production Inc. All rights reserved.
+//  Created by alexiscn on 2018/6/8.
 //
 
 import Foundation
