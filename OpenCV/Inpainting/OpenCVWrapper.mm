@@ -29,7 +29,7 @@ using namespace cv;
 #ifdef __cplusplus
 
 + (Mat)_grayFrom:(UIImage*)source;
-+ (Mat)_grayFrom:(UIImage*)source andMask:(UIImage *)imgMask;
++ (Mat)_grayFrom:(UIImage*)source andMask:(UIImage *)imgMask andAlgo:(int)algo;
 + (Mat)_matFrom:(UIImage *)source;
 + (UIImage *)_imageFrom:(Mat)source;
 
@@ -48,9 +48,9 @@ using namespace cv;
     return [OpenCVWrapper _imageFrom:[OpenCVWrapper _grayFrom:source]];
 }
 
-+ (UIImage *)pixMix:(UIImage *)source andMask:(UIImage *)mask {
++ (UIImage *)pixMix:(UIImage *)source andMask:(UIImage *)mask andAlgo:(int)algo {
     cout << "OpenCV: ";
-    return [OpenCVWrapper _imageFrom:[OpenCVWrapper _grayFrom:source andMask:mask]];
+    return [OpenCVWrapper _imageFrom:[OpenCVWrapper _grayFrom:source andMask:mask andAlgo:algo]];
 }
 
 #pragma mark Private
@@ -60,11 +60,11 @@ using namespace cv;
     UIImageToMat(source, src, true);
     
     cv::Mat_<cv::Vec3b> imageMat = pixMixWhite(src);
-        
+    
     return imageMat;
 }
 
-+ (Mat)_grayFrom:(UIImage *)source andMask:(UIImage *)imgMask  {
++ (Mat)_grayFrom:(UIImage *)source andMask:(UIImage *)imgMask andAlgo:(int)algo  {
     
     source = source.fixOrientation;
     imgMask = imgMask.fixOrientation;
@@ -74,8 +74,17 @@ using namespace cv;
     cv::Mat mask;
     UIImageToMat(imgMask, mask, true);
         
-    cv::Mat_<cv::Vec3b> imageMat = foo(src, mask);
-        
+    cv::Mat_<cv::Vec3b> imageMat;
+    
+    if (algo == 0) {
+        imageMat = foo(src, mask);
+    } else {
+        imageMat = cv_inpainting(src, mask);
+    }
+    
+//    cv::Mat_<cv::Vec3b> imageMat = qt_inpainting(src, mask);
+//    cv::Mat_<cv::Vec3b> imageMat = cv_inpainting(src, mask);
+    
     return imageMat;
 }
 

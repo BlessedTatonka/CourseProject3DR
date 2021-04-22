@@ -11,7 +11,8 @@
 @interface OpenCVWrapper : NSObject
 
 + (UIImage *)pixMix:(UIImage *)source;
-+ (UIImage *)pixMix:(UIImage *)source andMask:(UIImage *)mask;
++ (UIImage *)pixMix:(UIImage *)source andMask:(UIImage *)mask andAlgo: (int) algo;
++ (UIImage *)test:(UIImage *)source andMask:(UIImage *)mask;
 
 @end
 

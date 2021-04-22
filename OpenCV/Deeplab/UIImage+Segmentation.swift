@@ -9,13 +9,13 @@ extension UIImage {
         guard var cgImage = self.coarseSegmentation() else {
             return nil
         }
-//        let outputWidth:Int = self.cgImage!.width
+        //        let outputWidth:Int = self.cgImage!.width
         let outputSize = CGSize(width: self.size.width, height: self.size.height)
         let resizeImg = UIImage(cgImage: cgImage).resize(size: outputSize)!
         let ciImg = CIImage(cgImage: resizeImg.cgImage!)
         let smoothFilter = SmoothFilter.init()
         smoothFilter.inputImage = ciImg
- 
+        
         let outputImage = smoothFilter.outputImage!
         let ciContext = CIContext(options: nil)
         cgImage = ciContext.createCGImage(outputImage, from: ciImg.extent)!
@@ -39,7 +39,7 @@ extension UIImage {
         for i in 0..<d {
             pageIndexs.append(pageSize * i)
         }
- 
+        
         func argmax(arr:Array<Int>) -> Int{
             precondition(arr.count > 0)
             var maxValue = arr[0]
@@ -62,11 +62,11 @@ extension UIImage {
                     itemArr.append(Int(truncating: output.ResizeBilinear_2__0[padding + pageOffset]))
                 }
                 /*
-                types map  [
-                    'background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus',
-                    'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike',
-                    'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tv'
-                    ]
+                 types map  [
+                 'background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus',
+                 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike',
+                 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tv'
+                 ]
                  */
                 let type = argmax(arr: itemArr)
                 res.append(type)
@@ -79,10 +79,7 @@ extension UIImage {
         var data = Data(count: length)
         data.withUnsafeMutableBytes { (bytes: UnsafeMutablePointer<UInt8>) -> Void in
             var pointer = bytes
-            /*
-            This reserved only [cat,dog,person]
-            */
-            let reserve = [8,12,15]
+            let reserve = [15]
             for pix in res{
                 let v:UInt8 = reserve.contains(pix) ? 255 : 0
                 for _ in 0...3 {
@@ -104,58 +101,58 @@ extension UIImage {
             decode: nil,
             shouldInterpolate: false,
             intent: CGColorRenderingIntent.defaultIntent
-            )
+        )
         return cgimg
     }
 }
 
 extension UIImage {
-
-  public func pixelBuffer(width: Int, height: Int) -> CVPixelBuffer? {
-    return pixelBuffer(width: width, height: height,
-                       pixelFormatType: kCVPixelFormatType_32ARGB,
-                       colorSpace: CGColorSpaceCreateDeviceRGB(),
-                       alphaInfo: .noneSkipFirst)
-  }
- 
-  func pixelBuffer(width: Int, height: Int, pixelFormatType: OSType,
-                   colorSpace: CGColorSpace, alphaInfo: CGImageAlphaInfo) -> CVPixelBuffer? {
-    var maybePixelBuffer: CVPixelBuffer?
-    let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
-                 kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue]
-    let status = CVPixelBufferCreate(kCFAllocatorDefault,
-                                     width,
-                                     height,
-                                     pixelFormatType,
-                                     attrs as CFDictionary,
-                                     &maybePixelBuffer)
-
-    guard status == kCVReturnSuccess, let pixelBuffer = maybePixelBuffer else {
-      return nil
+    
+    public func pixelBuffer(width: Int, height: Int) -> CVPixelBuffer? {
+        return pixelBuffer(width: width, height: height,
+                           pixelFormatType: kCVPixelFormatType_32ARGB,
+                           colorSpace: CGColorSpaceCreateDeviceRGB(),
+                           alphaInfo: .noneSkipFirst)
     }
-
-    CVPixelBufferLockBaseAddress(pixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
-    let pixelData = CVPixelBufferGetBaseAddress(pixelBuffer)
-
-    guard let context = CGContext(data: pixelData,
-                                  width: width,
-                                  height: height,
-                                  bitsPerComponent: 8,
-                                  bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer),
-                                  space: colorSpace,
-                                  bitmapInfo: alphaInfo.rawValue)
-    else {
-      return nil
+    
+    func pixelBuffer(width: Int, height: Int, pixelFormatType: OSType,
+                     colorSpace: CGColorSpace, alphaInfo: CGImageAlphaInfo) -> CVPixelBuffer? {
+        var maybePixelBuffer: CVPixelBuffer?
+        let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
+                     kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue]
+        let status = CVPixelBufferCreate(kCFAllocatorDefault,
+                                         width,
+                                         height,
+                                         pixelFormatType,
+                                         attrs as CFDictionary,
+                                         &maybePixelBuffer)
+        
+        guard status == kCVReturnSuccess, let pixelBuffer = maybePixelBuffer else {
+            return nil
+        }
+        
+        CVPixelBufferLockBaseAddress(pixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
+        let pixelData = CVPixelBufferGetBaseAddress(pixelBuffer)
+        
+        guard let context = CGContext(data: pixelData,
+                                      width: width,
+                                      height: height,
+                                      bitsPerComponent: 8,
+                                      bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer),
+                                      space: colorSpace,
+                                      bitmapInfo: alphaInfo.rawValue)
+        else {
+            return nil
+        }
+        
+        UIGraphicsPushContext(context)
+        context.translateBy(x: 0, y: CGFloat(height))
+        context.scaleBy(x: 1, y: -1)
+        self.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
+        UIGraphicsPopContext()
+        CVPixelBufferUnlockBaseAddress(pixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
+        return pixelBuffer
     }
-
-    UIGraphicsPushContext(context)
-    context.translateBy(x: 0, y: CGFloat(height))
-    context.scaleBy(x: 1, y: -1)
-    self.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
-    UIGraphicsPopContext()
-    CVPixelBufferUnlockBaseAddress(pixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
-    return pixelBuffer
-  }
 }
 
 extension UIImage {
@@ -168,7 +165,7 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return img
     }
- 
+    
 }
 
 

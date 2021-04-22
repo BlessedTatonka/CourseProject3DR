@@ -151,6 +151,12 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                         return
                     }
                     
+                    print(label.identifier)
+                    
+                    if label.identifier != "person" {
+                        return
+                    }
+                    
                     let width = screenWidth
                     let height = width * (CGFloat(videoWidth) / CGFloat(videoHeight))
                     let offsetY = (screenHeight - height) / 2
@@ -158,23 +164,15 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                     let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -height - offsetY)
                     let rect = prediction.boundingBox.applying(scale).applying(transform)
                     
-                    var extraArea: CGFloat = 50
+                    var extraArea: CGFloat = 0
                     let extendedRect = CGRect(x: max(0, rect.minX - extraArea),
                                               y: max(0, rect.minY - extraArea),
                                               width: min(414, rect.maxX + extraArea),
                                               height: min(896, rect.maxY + extraArea))
                     
-//                    let firstRect = CGRect(x: rect.minX, y: rect.minY, width: rect.maxX - rect.minX, height: rect.maxY - rect.minY)
-//                    let rect = CGRect(x: 60, y: 300, width: 200, height: 500)
                     
                     let color = UIColor(red: 36/255, green: 101/255, blue: 255/255, alpha: 1.0)
                     self.boundingBoxes[index].show(frame: extendedRect, label: label.identifier, color: color)
-
-                    
-//                    let x = rect.minY * 1920 / 896
-//                    let y = (414 - rect.minX) * 1080 / 414
-//                    let w = ((rect.maxY - rect.minY) * 1920 / 896)
-//                    let h = (414 - rect.minX + rect.maxX) * 1080 / 414
                     
                     extraArea = 0
                     
@@ -199,27 +197,12 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                     
                     let croppedImage: UIImage = UIImage(cgImage: imageRef).rotate(radians: .pi/2)!
                     
-                    if  i % 100 == 0 {
+                    if  i % 30 == 0 {
                         let inpaintedIamge = InpaintingViewController.segmentAndInpaint(src: croppedImage)!
                         
                         self.boundingBoxes[index].addImage(image: inpaintedIamge.cgImage!)
                     }
                     i += 1
-                    
-                    
-//                    self.boundingBoxes[index].addImage(image: croppedImage.cgImage!)
-                     
-                    
-                    //let croppedImage: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
-
-//                    self.imageView.image = croppedImage
-                    
-                    
-                    print(rect.minX, rect.minY, rect.width, rect.height)
-                    print(screenHeight)
-                    print(screenWidth)
-                    print(CGFloat(videoHeight))
-                    print(CGFloat(videoWidth))
                     
                 }
                 for index in topKPredictions.count ..< 1 { // 20 {

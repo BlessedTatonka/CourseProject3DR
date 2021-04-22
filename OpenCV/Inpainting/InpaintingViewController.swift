@@ -59,13 +59,13 @@ class InpaintingViewController: UIViewController {
     
     public static func segmentAndInpaint(src: UIImage) -> UIImage? {
         if let cgImg = src.segmentation() {
-            return OpenCVWrapper.pixMix(src, andMask: UIImage(cgImage: cgImg));
+            return OpenCVWrapper.pixMix(src, andMask: UIImage(cgImage: cgImg), andAlgo: Int32(selectedInpainting));
         }
         
         return nil
     }
     
-    private func test() {
+    public func test() {
         
     }
     
